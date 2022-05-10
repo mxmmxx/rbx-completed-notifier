@@ -1,0 +1,15 @@
+{
+  "name": "completednotifier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "appjs",
+  "scripts": {
+    "start": "node app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "superagent": "^7.1.3"
+  }
+}
