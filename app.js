@@ -109,7 +109,7 @@ const main = async () => {
                     totalRapSent += rap;
 
                     formattedItemsSent.push(
-                        `\`${value.toLocaleString()}\` • ${name}`
+                        `\`${value.toLocaleString()}\` • [${name}](https://rolimons.com/item/${itemId})`
                     )
                 }
                 for (const item of received) {
@@ -124,7 +124,7 @@ const main = async () => {
                     totalRapReceived += rap;
 
                     formattedItemsReceived.push(
-                        `\`${value.toLocaleString()}\` • ${name}`
+                        `\`${value.toLocaleString()}\` • [${name}](https://rolimons.com/item/${itemId})`
                     )
                 }
 
@@ -149,12 +149,16 @@ const main = async () => {
                             fields: [
                                 {
                                     name: '📤 sent',
-                                    value: `${formattedItemsSent.join('\n')}\n\n<:rollahmons:973409500499431424> \`${totalValueSent.toLocaleString()}\` \`//\` <:wrapping:973409500507811840> \`${totalRapSent.toLocaleString()}\``,
+                                    value:
+                                        `<:rollahmons:973409500499431424> \`${totalValueSent.toLocaleString()}\` \`//\` <:wrapping:973409500507811840> \`${totalRapSent.toLocaleString()}\` \n\n` +
+                                        `${formattedItemsSent.join('\n')}`,
                                     inline: true
                                 },
                                 {
                                     name: '📥 received',
-                                    value: `${formattedItemsReceived.join('\n')}\n\n<:rollahmons:973409500499431424> \`${totalValueReceived.toLocaleString()}\` \`//\` <:wrapping:973409500507811840> \`${totalRapReceived.toLocaleString()}\``,
+                                    value:
+                                        `<:rollahmons:973409500499431424> \`${totalValueReceived.toLocaleString()}\` \`//\` <:wrapping:973409500507811840> \`${totalRapReceived.toLocaleString()}\` \n\n` +
+                                        `${formattedItemsReceived.join('\n')}`,
                                     inline: true
                                 }
                             ]
